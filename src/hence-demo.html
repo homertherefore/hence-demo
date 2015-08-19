@@ -1,0 +1,9 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="hence-demo">
+  <template>
+    <input on-tap="clearError" value="{{callToAction.email::input}}" placeholder="email">
+    <button on-tap="eventCallToAction">Sign Me Up!</button>
+    <small class="error">{{emailError}}</small>
+  </template>
+</dom-module>
