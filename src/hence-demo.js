@@ -35,7 +35,7 @@ let HenceDemo = Hence.Ui({
   }
 });
 
-console.log('henceDemo',HenceDemo);
+console.log('eventCallToAction',HenceDemo.eventCallToAction);
 
 export {is};
 export default HenceDemo;
