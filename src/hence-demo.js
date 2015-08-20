@@ -1,25 +1,26 @@
-'use strict';
 /**
  * @module hence-demo
  */
+'use strict';
+
 import console from 'consoler';
 import Hence from 'hence-component-framework';
-
-let is = 'hence-demo';
 
 /**
  * HenceDemo Component
  * @constructor
  */
 let HenceDemo = Hence.Ui({
-  is, // auto set as is : is, es6 laziness joy!
+  is: 'hence-demo',
   properties: {
     callToAction: Object,
     emailError: String
   },
-  eventCallToAction: Hence.hook('callToAction', (data)=> {
+  eventCallToAction: Hence.hook('callToAction', (data, model, e)=> {
     // Data in this case is referencing this.callToAction on the component, but this isn't always the case. The
     // full targeted object will be accessible here, allowing you to prepare/adjust/check/leverage any aspect of it.
+
+    console.log('calltoaction with', [this, data, model, e]);
 
     // Was a valid email inputted?
     if (!data.email.match(/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/)) {
@@ -35,7 +36,4 @@ let HenceDemo = Hence.Ui({
   }
 });
 
-console.log('eventCallToAction',[HenceDemo.eventCallToAction,HenceDemo.callToAction, HenceDemo.listeners], HenceDemo);
-
-export {is};
 export default HenceDemo;
