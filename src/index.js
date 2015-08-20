@@ -11,8 +11,8 @@ docReady(()=> {
   // Spawn various states of the component to preview them side by side
   HenceDemo.appendElementTo({
     callToAction: {
-      action(data) {
-        console.log('I got an email from the component!', data.email);
+      action() {
+        console.log('I got an email from the component!', this.email);
       },
       email: "",
       customError: "Quit being lazy, enter a valid email!"

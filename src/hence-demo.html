@@ -3,7 +3,7 @@
 <dom-module id="hence-demo">
   <template>
     <input on-tap="clearError" value="{{callToAction.email::input}}" placeholder="email">
-    <button on-tap="eventCallToAction">Sign Me Up!</button>
+    <button on-tap="hook.callToAction">Sign Me Up!</button>
     <small class="error">{{emailError}}</small>
   </template>
 </dom-module>
